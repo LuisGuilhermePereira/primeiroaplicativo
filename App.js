@@ -1,11 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 
 export default function App() {
+
+  const [nome, SetNome] =useState('');
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={styles.titulo}>Primeiro Aplicativo</Text>
+      <TextInput style={styles.campo} value={nome} placeholder="Digite seu nome"onChangeTexte={(nome)=> SetNome(nome)}/>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -18,4 +23,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  titulo:{
+    fontFamily: 'Comic Sans MS',
+    fontSize: 30,
+    textAlign: 'center',
+    margintop:25
+  },
+
+  campo:{
+    backgorundcolor: '#121212',
+    borderRadius: 10,
+    fontSize: 23,
+    color: '#FFF',
+    margin: 10,
+    padding:10,
+  },
+
+  botao:{
+    backgroundColor:'#41AEF4',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 15,
+    padding: 10
+  },
+
+  textoBotao:{
+    fontSize: 25,
+    color: '#FFF'
+  }
 });
